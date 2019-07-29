@@ -5,7 +5,7 @@ Personal Project
 
 - Name: Number Neural Network
 - Year: 2018
-- Description: Neural Network algorithm that uses MNIST to detect digits drawn directly in a tkinter canvas and making a live predictions.
+- Description: Neural Network algorithm that uses MNIST database to detect digits drawn directly in a tkinter canvas and making a live predictions.
 
 ![alt text](https://github.com/filipenovais/NumberNeuralNetwork/blob/master/nnclean.png)
 ![alt text](https://github.com/filipenovais/NumberNeuralNetwork/blob/master/nn6.png)
