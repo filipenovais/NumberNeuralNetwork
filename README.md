@@ -12,4 +12,3 @@ Personal Project
 
 
 This project is inspired in the book: "Make Your Own Neural Network" by Tariq Rashid
-
