@@ -1,4 +1,3 @@
-
 import numpy
 import matplotlib.pyplot
 import scipy.special
@@ -13,8 +12,10 @@ from PIL import Image
 from pyscreenshot import grab
 
 
-class neuralNetwork:
+# ************************** Neural Network **************************
 
+
+class neuralNetwork:
 
     def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
         self.inodes = inputnodes
@@ -81,7 +82,7 @@ training_data_file = open("mnist_dataset/mnist_train_100.csv", 'r')
 training_data_list = training_data_file.readlines()
 training_data_file.close()
 
-
+print('Generating Neural Network...')
 epochs = 50
 for e in range(epochs):
     for record in training_data_list:
@@ -102,48 +103,24 @@ for e in range(epochs):
         pass
     pass
 
+print('FINISHED NN!!')
 
-#data set com os valores do mnist
+# ************************** TKINTER **************************
 
-#test_data_file = open("mnist_dataset/mnist_test_10.csv", 'r')
-#test_data_list = test_data_file.readlines()
-#test_data_file.close()
-
-
-#all_values = test_data_list[1].split(',')
-
-#image_array = numpy.asfarray(all_values[1:]).reshape((28,28))
-#matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')
-#matplotlib.pyplot.show()
-
-
-#print("correct")
-#print(all_values[0])
-
-#inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
-#print(inputs)
-
-
-
-
-width = 350
-height = 350
-center = height//2
-white = (255, 255, 255)
 
 def save():
     
     global draw, image1
 
     im = grab(bbox=(490, 325, 810, 670))
-    im.save("number.jpg")
-    #im.show()
+    im.save("number.png")
+    im.show()
     imgarray = numpy.array(image1)
 
     image1 = PIL.Image.new("RGB", (width, height), white)
     draw = ImageDraw.Draw(image1)
 
-    pil_im = Image.open('number.jpg')
+    pil_im = Image.open('number.png')
     pil_imgray = pil_im.convert('L')
 
     img = numpy.array(list(pil_imgray.getdata(band=0)), float)
@@ -183,6 +160,15 @@ def paint(event):
     cv.create_oval(x1, y1, x2, y2, fill="black",width=40)
     draw.line([x1, y1, x2, y2],fill="black",width=40)
 
+
+
+width = 350
+height = 350
+center = height//2
+white = (255, 255, 255)
+
+
+
 root = Tk()
 
 
@@ -212,15 +198,6 @@ draw = ImageDraw.Draw(image1)
 
 cv.pack(expand=YES, fill=BOTH)
 cv.bind("<B1-Motion>", paint)
-
-
-
-
-
-
-
-
-
 
 
 
