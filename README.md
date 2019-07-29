@@ -8,3 +8,5 @@ Personal Project
 - Description:
 
 ![alt text](https://github.com/filipenovais/NumberNeuralNetwork/blob/master/nnclean.png)
+![alt text](https://github.com/filipenovais/NumberNeuralNetwork/blob/master/nn6.png)
+
